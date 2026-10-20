@@ -1,0 +1,18 @@
+services:
+  counter:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      APP_TITLE: "My Docker Containerization Project"
+      APP_MESSAGE: "My first custom Docker container!"
+    volumes:
+      - counter_data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health')"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  counter_data:
