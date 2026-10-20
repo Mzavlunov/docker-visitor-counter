@@ -42,16 +42,6 @@ docker compose down               # Stop and remove container/network; keep data
 
 `Browser (localhost:5000) -> Docker published port 5000 -> Python app in container -> /data/visits.txt on named Docker volume`
 
-## Assignment evidence
-
-Capture your **own** screenshots of:
-
-1. A browser displaying the working page and its visit count.
-2. A PowerShell terminal showing `docker compose up --build -d` and `docker compose ps` with `healthy`.
-3. A `docker volume ls` result and/or `docker volume inspect` for your volume.
-4. The browser count before `docker compose down`, and after `docker compose up -d` (persistence evidence).
-5. Your repository containing `Dockerfile`, `compose.yaml`, and `app.py`.
-
 ## Limitations
 
 This is a local learning demo, not a production web service. It uses Python's standard-library `HTTPServer` and a text file, so it is intentionally simple and not designed for concurrent traffic.
